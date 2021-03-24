@@ -17,8 +17,9 @@ public class Main {
             newArr[i] = arr[smallestIndex];
 
             // Т.к. в Java нет array.pop, то нужно массив преобразовать так, чтобы в нем не оказалось наименьшего элемента
-            if (arr.length - 1 - smallestIndex >= 0)
+            if (arr.length - 1 - smallestIndex >= 0) {
                 System.arraycopy(arr, smallestIndex + 1, arr, smallestIndex, arr.length - 1 - smallestIndex);
+            }
         }
 
         return newArr;
