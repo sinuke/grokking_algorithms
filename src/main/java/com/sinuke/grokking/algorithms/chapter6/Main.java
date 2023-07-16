@@ -33,19 +33,19 @@ public class Main {
         graph.put(thom, new Person[] {});
         graph.put(jonny, new Person[] {});
 
-        Deque<Person> search_queue = new ArrayDeque<>();
-        Collections.addAll(search_queue, graph.get(you));
+        Deque<Person> searchQueue = new ArrayDeque<>();
+        Collections.addAll(searchQueue, graph.get(you));
 
         List<Person> searched = new ArrayList<>();
 
-        while (!search_queue.isEmpty()) {
-            Person person = search_queue.pop();
+        while (!searchQueue.isEmpty()) {
+            Person person = searchQueue.pop();
             if (!searched.contains(person)) {
                 if (person.seller()) {
                     System.out.println(person.name() + " is mango seller!");
                     break;
                 } else {
-                    Collections.addAll(search_queue, graph.get(person));
+                    Collections.addAll(searchQueue, graph.get(person));
                     searched.add(person);
                 }
             }

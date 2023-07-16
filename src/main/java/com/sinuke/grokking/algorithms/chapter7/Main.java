@@ -47,6 +47,7 @@ public class Main {
         while (node != null) {
             int cost = costs.get(node);
             Map<String, Integer> neighbors = graph.get(node);
+
             for (String n : neighbors.keySet()) {
                 int newCost = cost + neighbors.get(n);
                 if (costs.get(n) > newCost) {
@@ -54,6 +55,7 @@ public class Main {
                     parents.replace(n, node);
                 }
             }
+
             processed.add(node);
             node = findLowestCostNode(costs);
         }

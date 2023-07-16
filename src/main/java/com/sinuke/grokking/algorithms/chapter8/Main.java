@@ -10,15 +10,15 @@ import java.util.Set;
 public class Main {
 
     public static void main(String[] args) {
-        Set<String> states_needed = new HashSet<>();
-        states_needed.add("mt");
-        states_needed.add("wa");
-        states_needed.add("or");
-        states_needed.add("id");
-        states_needed.add("nv");
-        states_needed.add("ut");
-        states_needed.add("ca");
-        states_needed.add("az");
+        Set<String> statesNeeded = new HashSet<>();
+        statesNeeded.add("mt");
+        statesNeeded.add("wa");
+        statesNeeded.add("or");
+        statesNeeded.add("id");
+        statesNeeded.add("nv");
+        statesNeeded.add("ut");
+        statesNeeded.add("ca");
+        statesNeeded.add("az");
 
         Set<String> statesKOne = Set.of("id", "nv", "ut");
         Set<String> statesKTwo = Set.of("wa", "id", "mt");
@@ -34,27 +34,27 @@ public class Main {
                 "kfive", statesKFive
         );
 
-        Set<String> final_stations = new HashSet<>();
+        Set<String> finalStations = new HashSet<>();
 
-        while (!states_needed.isEmpty()) {
-            String best_station = null;
-            Set<String> states_covered = new HashSet<>();
+        while (!statesNeeded.isEmpty()) {
+            String bestStation = null;
+            Set<String> statesCovered = new HashSet<>();
 
-            for (String key : stations.keySet()) {
-                Set<String> covered = new HashSet<>(states_needed);
+            for (var key : stations.keySet()) {
+                Set<String> covered = new HashSet<>(statesNeeded);
                 covered.retainAll(stations.get(key));
 
-                if (covered.size() > states_covered.size()) {
-                    best_station = key;
-                    states_covered = covered;
+                if (covered.size() > statesCovered.size()) {
+                    bestStation = key;
+                    statesCovered = covered;
                 }
             }
 
-            states_needed.removeAll(states_covered);
-            final_stations.add(best_station);
+            statesNeeded.removeAll(statesCovered);
+            finalStations.add(bestStation);
         }
 
-        System.out.println(final_stations);
+        System.out.println(finalStations);
     }
 
 }
