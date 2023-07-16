@@ -11,7 +11,7 @@ public class Main {
         System.out.println(Arrays.toString(quickSort(new int[]{10, 5, 2, 3, -1, 43, -143, 302})));
     }
 
-    public static int[] quickSort(int[] arr) {
+    private static int[] quickSort(int[] arr) {
         if (arr.length < 2) {
             return arr;
         } else {

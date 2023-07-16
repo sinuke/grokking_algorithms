@@ -1,6 +1,5 @@
 package com.sinuke.grokking.algorithms.chapter8;
 
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
@@ -21,35 +20,19 @@ public class Main {
         states_needed.add("ca");
         states_needed.add("az");
 
-        Set<String> statesKOne = new HashSet<>();
-        statesKOne.add("id");
-        statesKOne.add("nv");
-        statesKOne.add("ut");
+        Set<String> statesKOne = Set.of("id", "nv", "ut");
+        Set<String> statesKTwo = Set.of("wa", "id", "mt");
+        Set<String> statesKThree = Set.of("or", "nv", "ca");
+        Set<String> statesKFour = Set.of("nv", "ut");
+        Set<String> statesKFive = Set.of("ca", "az");
 
-        Set<String> statesKTwo = new HashSet<>();
-        statesKTwo.add("wa");
-        statesKTwo.add("id");
-        statesKTwo.add("mt");
-
-        Set<String> statesKThree = new HashSet<>();
-        statesKThree.add("or");
-        statesKThree.add("nv");
-        statesKThree.add("ca");
-
-        Set<String> statesKFour = new HashSet<>();
-        statesKFour.add("nv");
-        statesKFour.add("ut");
-
-        Set<String> statesKFive = new HashSet<>();
-        statesKFive.add("ca");
-        statesKFive.add("az");
-
-        Map<String, Set<String>> stations = new HashMap<>();
-        stations.put("kone", statesKOne);
-        stations.put("ktwo", statesKTwo);
-        stations.put("kthree", statesKThree);
-        stations.put("kfour", statesKFour);
-        stations.put("kfive", statesKFive);
+        Map<String, Set<String>> stations = Map.of(
+                "kone", statesKOne,
+                "ktwo", statesKTwo,
+                "kthree", statesKThree,
+                "kfour", statesKFour,
+                "kfive", statesKFive
+        );
 
         Set<String> final_stations = new HashSet<>();
 

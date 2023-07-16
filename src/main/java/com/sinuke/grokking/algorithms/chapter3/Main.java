@@ -9,7 +9,7 @@ public class Main {
         System.out.println("25! = " + fact(25));
     }
 
-    public static int fact(int i) {
+    private static int fact(int i) {
         if (i == 1) {
             return i;
         } else {

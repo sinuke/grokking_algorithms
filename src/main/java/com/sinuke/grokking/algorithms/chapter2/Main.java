@@ -12,7 +12,7 @@ public class Main {
         System.out.println(Arrays.toString(selectionSort(arr)));
     }
 
-    public static int[] selectionSort(int[] arr) {
+    private static int[] selectionSort(int[] arr) {
         int[] newArr = new int[arr.length];
 
         for (int i = 0; i < arr.length; i++) {
@@ -28,7 +28,7 @@ public class Main {
         return newArr;
     }
 
-    public static int findSmallest(int[] arr) {
+    private static int findSmallest(int[] arr) {
         int smallest = arr[0];
         int smallestIndex = 0;
 

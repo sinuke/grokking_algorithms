@@ -12,7 +12,7 @@ public class Main {
         System.out.println(binarySearch(arr, 234));
     }
 
-    public static int binarySearch(int[] arr, int value) {
+    private static int binarySearch(int[] arr, int value) {
         int low = 0;
         int high = arr.length - 1;
 
